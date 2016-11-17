@@ -10,11 +10,13 @@ import UIKit
 
 
 enum RepresentationActionType {
-    case segue(segue: String, icon: String)
-    case toggle(state: Bool)
+    case segue(segue: String, icon: String, text: NSAttributedString)
+    case toggle(state: Bool, caption: NSAttributedString, action: SenderActionBlock)
     case spacer
-    case text(placeholder: NSAttributedString)
-    case buttonAction(action: ((AnyObject)->Void))
+    case text(placeholder: NSAttributedString, maxLines: Int)
+    case buttonAction(text: String, action: SenderActionBlock)
+    case twoButtonAction(leftButtonText: String, rightButtonText: String, leftButtonAction: SenderActionBlock, rightButtonAction: SenderActionBlock)
 }
 
 var MainQueue = DispatchQueue.main
+typealias SenderActionBlock = ((AnyObject)->Void)

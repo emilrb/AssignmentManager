@@ -7,19 +7,15 @@
 //
 
 import UIKit
+import Crashlytics
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        Answers.logCustomEvent(withName: "Começou a treta", customAttributes: ["Treta Level":"Max Treta Level"])
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
