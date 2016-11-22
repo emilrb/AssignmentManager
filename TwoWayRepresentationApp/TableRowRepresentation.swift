@@ -11,8 +11,9 @@ import UIKit
 class TableRowRepresentation {
     
     var theType: RepresentationActionType
+    
     var theRowHeight: CGFloat = 44.0
-//    var theUserInfo: AnyObject?
+    
     weak var theCell: RepresentationBasedCell?
     
     init(type: RepresentationActionType) {

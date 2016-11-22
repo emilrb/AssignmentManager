@@ -10,7 +10,7 @@ import UIKit
 
 
 enum RepresentationActionType {
-    case segue(segue: String, icon: String, text: NSAttributedString)
+    case segue(name: String, icon: String, text: NSAttributedString)
     case toggle(state: Bool, caption: NSAttributedString, action: SenderActionBlock)
     case spacer
     case text(placeholder: NSAttributedString, maxLines: Int)

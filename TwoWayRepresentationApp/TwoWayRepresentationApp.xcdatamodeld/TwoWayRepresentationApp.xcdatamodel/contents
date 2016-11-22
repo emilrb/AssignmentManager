@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Assignment" representedClassName="Assignment" syncable="YES" codeGenerationType="class">
+        <attribute name="done" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dueDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="obs" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="overridenTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToCourse" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Course" inverseName="hasAssignments" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Course" representedClassName="Course" syncable="YES" codeGenerationType="class">
+        <attribute name="classDays" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="127" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="courseName" attributeType="String" syncable="YES"/>
+        <attribute name="currentAbsences" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxAbsences" attributeType="Integer 16" minValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="hasAssignments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Assignment" inverseName="belongsToCourse" inverseEntity="Assignment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Course" positionX="-632" positionY="-3906" width="146" height="118"/>
+        <element name="Assignment" positionX="-882" positionY="-3781" width="153" height="133"/>
+    </elements>
 </model>
